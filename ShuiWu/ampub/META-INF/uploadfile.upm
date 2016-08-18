@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module name="ampub">
+	<public>
+		<component remote="true" singleton="true" accessProtected="false"  tx="CMT">
+			<interface>nc.itf.ampub.upload.IUpLoadFileForAM</interface>
+			<implementation>nc.impl.ampub.upload.UpLoadFileForAMImpl</implementation>
+		</component>
+	</public>
+</module>
