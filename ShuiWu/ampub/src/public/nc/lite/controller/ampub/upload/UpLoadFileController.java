@@ -58,7 +58,9 @@ public class UpLoadFileController {
 			String basePath = request.getScheme() + "://"
 					+ request.getServerName() + ":" + request.getServerPort()
 					+ reqpath + "/";
-			String path = basePath+"showimg/"+tempFile.getName();
+			//不再保存访问图片的服务地址，而是图片的路径地址
+			//String path = basePath+"showimg/"+tempFile.getName();
+			String path = basePath + "res/pictures/" + tempFile.getName();
 			//String filename = tempFile.getName();
 			//获取uploadvo
 			UpLoadVO vo = getUpLoadVO(num,path);
