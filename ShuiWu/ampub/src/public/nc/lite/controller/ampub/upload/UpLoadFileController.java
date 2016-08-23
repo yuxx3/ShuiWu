@@ -78,6 +78,8 @@ public class UpLoadFileController {
 		} catch (Exception e) {
 			// 处理异常
 			String msg = ResultContext.getMsg(2);
+			//ma异常
+			mav.addObject("result",2);
 			//mav.addObject("msg", msg);
 			mav.setViewName("redirect:/");
 		}
