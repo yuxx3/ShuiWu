@@ -1,6 +1,7 @@
 package nc.lite.controller.ampub.upload;
 
 import java.io.File;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -39,11 +40,12 @@ public class UpLoadFileController {
 			HttpServletRequest request,HttpServletResponse response) {
 		ModelAndView mav = new ModelAndView("");
 		response.setCharacterEncoding("UTF-8");
+		File tempFile = null;
 		try {
 			String fileName = file.getOriginalFilename().split("\\.")[1];
 			//获取批次号
 			String num = request.getParameter("num");
-			File tempFile = new File(FILE_PATH, new Date().getTime()
+			tempFile = new File(FILE_PATH, new Date().getTime()
 					+"."+ String.valueOf(fileName));
 			if (!tempFile.getParentFile().exists()) {
 				tempFile.getParentFile().mkdir();
@@ -75,14 +77,17 @@ public class UpLoadFileController {
 			//mav.addObject("msg", msg);
 			mav.addObject("result",code);
 			mav.setViewName("redirect:/");
-		} catch (Exception e) {
-			// 处理异常
-			String msg = ResultContext.getMsg(2);
-			//ma异常
+		}catch(IOException e){
+			// 处理异常,删除上传的图片,文件操作异常，属于ma服务器这边的异常信息
+			tempFile.delete();
 			mav.addObject("result",2);
-			//mav.addObject("msg", msg);
-			mav.setViewName("redirect:/");
+		} catch (Exception e) {
+			// 处理异常,删除上传的图片
+			tempFile.delete() ;
+			//ma异常
+			mav.addObject("result",e.getMessage());
 		}
+		mav.setViewName("redirect:/");
 		return mav;
 	}
 
