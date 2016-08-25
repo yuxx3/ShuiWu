@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module name="mmppac">
+	<public>
+		<component remote="true" singleton="true" accessProtected="false"  tx="CMT">
+			<interface>nc.itf.mmppac.orders.IProductOrder</interface>
+			<implementation>nc.impl.mmppac.orders.ProductOrderImpl</implementation>
+		</component>
+	</public>
+</module>
