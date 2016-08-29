@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
+	<classpathentry kind="src" output="report/classes" path="report/src/public"/>
+	<classpathentry kind="src" output="report/classes" path="report/src/client"/>
+	<classpathentry kind="src" output="report/classes" path="report/src/private"/>
+	<classpathentry kind="src" output="report/classes" path="report/resources"/>
+	<classpathentry kind="src" output="report/classes" path="report/src/test"/>
+	<classpathentry kind="src" output="mmppac/classes" path="mmppac/src/public"/>
+	<classpathentry kind="src" output="mmppac/classes" path="mmppac/src/client"/>
+	<classpathentry kind="src" output="mmppac/classes" path="mmppac/src/private"/>
+	<classpathentry kind="src" output="mmppac/classes" path="mmppac/resources"/>
+	<classpathentry kind="src" output="mmppac/classes" path="mmppac/src/test"/>
 	<classpathentry kind="src" output="uapbd/classes" path="uapbd/src/public"/>
 	<classpathentry kind="src" output="uapbd/classes" path="uapbd/src/client"/>
 	<classpathentry kind="src" output="uapbd/classes" path="uapbd/src/private"/>
